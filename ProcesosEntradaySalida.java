@@ -7,13 +7,25 @@ public class ProcesosEntradaySalida extends Procesos{
         this.ingreso = ingreso;
         this.salida = salida;
     }
+
+    public String getIngreso() {
+        return ingreso;
+    }
+
+    public void setIngreso(String ingreso) {
+        this.ingreso = ingreso;
+    }
+
+    public String getSalida() {
+        return salida;
+    }
+
+    public void setSalida(String salida) {
+        this.salida = salida;
+    }
     
-    public String ejecutarProceso (String ingreso) {
-            if (ingreso == this.ingreso) {
+    @Override
+    public String ejecutarProceso () {
             return this.salida;
-            }
-            else {
-               return "Ingreso no válido para este proceso";
-            }
     }
 }

@@ -31,9 +31,9 @@ public class Main {
                 System.out.println("2. Crear proceso de entra y salida: ");
                 System.out.println("3. Crear proceso Daemon: ");
                 System.out.println("Ingrese alguna opción (Del 1 al 3): ");
-                pagina = input.nextInt();
+                int procesoAcrear = input.nextInt();
                 System.out.println("-------------------------------------------------------------");
-                switch (pagina) {
+                switch (procesoAcrear) {
                     case 1:
                         Scanner datos = new Scanner(System.in);
                         System.out.println("Ingrese el nombre del nuevo proceso: ");
@@ -42,7 +42,7 @@ public class Main {
                         entrada = datos.nextLine();
                         System.out.println("Ingrese el PID del nuevo proceso: ");
                         PID = datos.nextInt();
-                        control.crearProcesos(pagina, nombre, PID, entrada, null);
+                        control.crearProcesos(procesoAcrear, nombre, PID, entrada, null);
                         System.out.println("-------------------------------------------------------------");
                         break;
                 
@@ -56,7 +56,7 @@ public class Main {
                         salida = datos.nextLine();
                         System.out.println("Ingrese el PID del nuevo proceso: ");
                         PID = datos.nextInt();
-                        control.crearProcesos(pagina, nombre, PID, entrada, salida);
+                        control.crearProcesos(procesoAcrear, nombre, PID, entrada, salida);
                         System.out.println("-------------------------------------------------------------");
                         break;
 
@@ -66,7 +66,7 @@ public class Main {
                         nombre = datos.nextLine();
                         System.out.println("Ingrese el PID del nuevo proceso: ");
                         PID = datos.nextInt();
-                        control.crearProcesos(pagina, nombre, PID, null, null);
+                        control.crearProcesos(procesoAcrear, nombre, PID, null, null);
                         System.out.println("-------------------------------------------------------------");
                         break;
                 }
@@ -78,16 +78,16 @@ public class Main {
                 System.out.println("2. Ver lista de procesos de entra y salida disponibles: ");
                 System.out.println("3. Ver lista de procesos Daemons disponibles: ");
                 System.out.println("Ingrese alguna opción (Del 1 al 3): ");
-                pagina = input.nextInt();
+                int listaArevisar = input.nextInt();
                 System.out.println("-------------------------------------------------------------");
-                switch (pagina) {
+                switch (listaArevisar) {
                     case 1:
                         for (ProcesosCPU procesosCPU : control.getAllprocesosCPU()) {
                             System.out.println(procesosCPU.getPID()+ " " + procesosCPU.getNombre());
                         }
                         System.out.println("Escoja el proceso a ejecutar segun el índice");
                         procesoAejecutar = procesoElegido.nextInt();
-                        System.out.println(control.ejecutarProcesoSeleccionado(pagina, procesoAejecutar, null));
+                        System.out.println(control.ejecutarProcesoSeleccionado(listaArevisar, procesoAejecutar, null));
                         break;
 
                     case 2:
@@ -99,7 +99,7 @@ public class Main {
                         Scanner entradaAingresar = new Scanner(System.in);
                         System.out.println("Ingrese la entrada correcta: ");
                         entrada = entradaAingresar.nextLine();
-                        System.out.println(control.ejecutarProcesoSeleccionado(pagina, procesoAejecutar, entrada));
+                        System.out.println(control.ejecutarProcesoSeleccionado(listaArevisar, procesoAejecutar, entrada));
                         break;
 
                     case 3:
@@ -108,7 +108,7 @@ public class Main {
                         };
                         System.out.println("Escoja el proceso a ejecutar segun el índice");
                         procesoAejecutar = procesoElegido.nextInt();
-                        System.out.println(control.ejecutarProcesoSeleccionado(pagina, procesoAejecutar, null));
+                        System.out.println(control.ejecutarProcesoSeleccionado(listaArevisar, procesoAejecutar, null));
                         break;
                 }
                 
