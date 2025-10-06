@@ -55,7 +55,7 @@ public class Controlador {
             case 2:
                 for (ProcesosEntradaySalida procesosEntradaySalida : AllprocesosEyS) {
                         if (procesosEntradaySalida.getPID() == procesoSeleccionado) {
-                            if (entrada == procesosEntradaySalida.getIngreso()) {
+                            if (procesosEntradaySalida.getIngreso().equals(entrada)) {
                                 return procesosEntradaySalida.ejecutarProceso();
                                 }
                                 else {

@@ -52,6 +52,7 @@ public class Main {
                         nombre = datos.nextLine();
                         System.out.println("Ingrese la entarda específica que debe recibir este proceso: ");
                         entrada = datos.nextLine();
+                        entrada = entrada.trim();
                         System.out.println("Ingrese la salida que el proceso debe retornar: ");
                         salida = datos.nextLine();
                         System.out.println("Ingrese el PID del nuevo proceso: ");
